@@ -5,5 +5,12 @@
 .header_contents{
   height:100px;
   width:auto;
-  background-color: #ffffff;
+  background-color: red;
+
+
+    &_button{
+      font-size:30px;
+      float:right;
+      margin: 100px, 100px;
+    }
 }
