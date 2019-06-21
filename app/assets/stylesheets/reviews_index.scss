@@ -28,11 +28,16 @@
         border-radius: 10px;/*角の丸み*/
       }
       &_main{
-
+        margin-top:10px;
+          img{
+            width: 90%;    /* 横幅を割合で指定 */
+            height: auto;  /* 高さは自動指定 */
+          }
       }
     }
     &_text{
       display: table-cell;
+      padding:15px 15px;
       height:200px;
       width: 30%;
       color: #000;/*文字色*/

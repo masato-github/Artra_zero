@@ -1,13 +1,7 @@
-<%= form_tag(reviews_create_path, method: "POST") do %>      
-  <%= label_tag 'title' %>
-  <%= text_field_tag :title %>
 
-  <%= label_tag 'title' %>
-  <%= text_field_tag :text %>
-
-  <%= label_tag 'image' %>
-  <%= file_field_tag :image %>
-
-
-  <%= submit_tag  '送信' %>
-<% end %>    
+<%= form_with model: @review, local: true  do |form| %>
+<%= form.text_field :title %><br>
+  <%= form.text_area :content %><br>
+  <%= form.file_field :image %><br>
+  <%= form.submit %>
+<% end %>

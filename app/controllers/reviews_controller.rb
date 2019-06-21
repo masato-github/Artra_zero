@@ -4,20 +4,13 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @review = Review.new
   end
 
   def create
-    @review = Review.new(permit_params)
-    @review.save!
+    @comment = Review.create params.require(:review).permit(:title, :content, :image) # POINT
     redirect_to action: 'index'
   end
 
 
-  #プライベート
-  private
-    def permit_params
-      params.permit(:title, :image, :text)
-    end
-
-
-  end
+end
