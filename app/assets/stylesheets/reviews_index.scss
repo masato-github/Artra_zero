@@ -8,6 +8,10 @@
   padding-bottom: 20px;
   background-color: #dedede;
   display: table;
+    li{
+      list-style: none;
+      margin-bottom: 30px;
+    }
 
     &-tweet{
       display: table-cell;
@@ -45,9 +49,9 @@
   float: right;
   padding:30px 10px 30px 10px;
   background-color: #bbb;
+  
 
     &-recommended_title{
-      background-color: red;
       height: 40px;
       width: 300px;
       margin: 0 auto;
@@ -65,7 +69,8 @@
       height:180px;
       width: 100%;
       margin-top:20px;
-      background-color: aqua;
+      border: solid 2px #9496a0;/*線*/
+      border-radius: 10px;/*角の丸み*/
 
       &_image{
         height:100%;

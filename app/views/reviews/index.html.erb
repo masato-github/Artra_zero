@@ -1,17 +1,22 @@
+
+<%# 投稿一覧(左側のコンテンツ) %>
 <div class="left_contents">
 <ul>
   <li>
     <div class="left_contents-tweet">
         <div class="left_contents-tweet_title">
-            <h1>我が猫</h1>
+            <h1><%= @reviews.title %></h1>
         </div>
         <div class="left_contents-tweet_main">
+          <%= image_tag @reviews.image %>
         </div>
     </div>
     <div class="left_contents_text">
+       <h1><%= @reviews.text %></h1>
     </div>
-    </li>
-  </ul>
+  </li>
+
+  
   <li>
     <div class="left_contents-tweet">
         <div class="left_contents-tweet_title">
@@ -45,10 +50,11 @@
     <div class="left_contents_text">
     </div>
     </li>
-  </ul>
+ </ul>
 </div>
 
 
+<%# オススメ画面(右側のコンテンツ) %>
 <div class="right_contents">
   <div class="right_contents-recommended_title">
     <h1 class="right_contents-recommended_title_font">オススメ</h1>

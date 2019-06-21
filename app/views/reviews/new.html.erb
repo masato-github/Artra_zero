@@ -1,0 +1,13 @@
+<%= form_tag(reviews_create_path, method: "POST") do %>      
+  <%= label_tag 'title' %>
+  <%= text_field_tag :title %>
+
+  <%= label_tag 'title' %>
+  <%= text_field_tag :text %>
+
+  <%= label_tag 'image' %>
+  <%= file_field_tag :image %>
+
+
+  <%= submit_tag  '送信' %>
+<% end %>    
