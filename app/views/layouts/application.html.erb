@@ -13,11 +13,11 @@
     <header>
       <div class="header_contents">     <!--[固定のヘッダー]-->
         <div>
-        <%= link_to  "Artra", "#", {class:"header_contents_logo"} %>   <!--ロゴ-->
+        <%= link_to  "Artra", "/", {class:"header_contents_logo"} %>   <!--ロゴ-->
         </div>
         <div class="header_contents_button">
           <%= link_to  "検索", "#", {class: "header_contents_button_search"}  %>   <!--検索ボタン-->
-          <%= link_to  "投稿", "#", {class: "header_contents_button_new"}  %>   <!--投稿ボタン-->
+          <%= link_to  "投稿", new_review_path, {class: "header_contents_button_new"}  %>   <!--投稿ボタン-->
         </div>
       </div>
     </header>
