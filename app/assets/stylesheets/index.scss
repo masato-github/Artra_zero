@@ -1,0 +1,82 @@
+.left_contents{
+  height: auto;
+  width: calc(60vw - 30px);
+  float:left;
+  padding-top:30px;
+  padding-left:20px;
+  padding-right:10px;
+  padding-bottom: 20px;
+  background-color: #dedede;
+  display: table;
+
+    &-tweet{
+      display: table-cell;
+      height:200px;
+      width:calc(100vw - 35vw);
+      background-color: white;
+      &_title{
+        width:50%;
+        padding: 0.5em 1em;
+        font-weight: bold;
+        color: #000;/*文字色*/
+        background: #FFF;
+        border: solid 3px #5d627b;/*線*/
+        border-radius: 10px;/*角の丸み*/
+      }
+      &_main{
+
+      }
+    }
+    &_text{
+      display: table-cell;
+      height:200px;
+      width: 30%;
+      color: #000;/*文字色*/
+      background: #FFF;
+      border: solid 3px #5d627b;/*線*/
+      border-radius: 40px;/*角の丸み*/
+    }
+}
+
+
+.right_contents{
+  height: auto;
+  width: calc(40% - 20px);
+  float: right;
+  padding:30px 10px 30px 10px;
+  background-color: #bbb;
+
+    &-recommended_title{
+      background-color: red;
+      height: 40px;
+      width: 300px;
+      margin: 0 auto;
+      padding-top:10px;
+      color: #000;/*文字色*/
+      background: #FFF;
+      border: solid 3px #5d627b;/*線*/
+      border-radius: 10px;/*角の丸み*/
+        &_font{
+          font-size:30px;
+          text-align: center;
+        }
+    }
+    &-recommended_main{
+      height:180px;
+      width: 100%;
+      margin-top:20px;
+      background-color: aqua;
+
+      &_image{
+        height:100%;
+        width:100%;
+        background-color: white;
+
+          &_title{
+            font-size:20px;
+            text-align: right;
+            padding: 150px 20px 5px 0;
+          }
+      }
+    }
+}

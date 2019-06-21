@@ -1,0 +1,50 @@
+body{
+  background-color: #5a5a5a;
+}
+
+
+.header_contents{
+  height: 100px;
+  width: auto;
+  background-color: #c0bfbf;
+
+    a{
+      text-decoration: none;
+    }
+
+    &_logo{
+      float: left;
+      font-size: 45px;
+      padding: 0.5em 1em;
+      margin: 2px 0 0 10px;
+      color: #5d627b;
+      background: white;
+      border-top: solid 5px #5d627b;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+
+    }
+
+    &_button{
+      font-size: 30px;
+      text-align: right;
+      padding-top: 40px;
+      padding-right: 100px;
+
+        &_search{
+          margin-right: 30px;
+          padding: 0.5em 1em;
+          color: #5d627b;
+          background: white;
+          border-top: solid 5px #5d627b;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        }
+
+        &_new{
+          padding: 0.5em 1em;
+          color: #5d627b;
+          background: white;
+          border-top: solid 5px #5d627b;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        }
+    }
+}
