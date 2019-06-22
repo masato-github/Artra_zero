@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :login_check, except: :index
   def index
     @reviews = Review.all
   end
@@ -12,5 +13,9 @@ class ReviewsController < ApplicationController
     redirect_to action: 'index'
   end
 
+
+  def login_check
+    redirect_to action: :index unless user_signed_in?
+  end
 
 end
