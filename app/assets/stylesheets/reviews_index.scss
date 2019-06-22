@@ -40,6 +40,7 @@
       padding:15px 15px;
       height:200px;
       width: 30%;
+      word-wrap: break-word;
       color: #000;/*文字色*/
       background: #FFF;
       border: solid 3px #5d627b;/*線*/
@@ -54,7 +55,7 @@
   float: right;
   padding:30px 10px 30px 10px;
   background-color: #bbb;
-  
+
 
     &-recommended_title{
       height: 40px;

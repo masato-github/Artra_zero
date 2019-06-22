@@ -1,54 +1,23 @@
 
 <%# 投稿一覧(左側のコンテンツ) %>
 <div class="left_contents">
-<ul>
-  <li>
-    <div class="left_contents-tweet">
-        <div class="left_contents-tweet_title">
-            <h1><%= @reviews.title %></h1>
+  <ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <div class="left_contents-tweet">
+            <div class="left_contents-tweet_title">
+                <h1><%= review.title %></h1>
+            </div>
+            <div class="left_contents-tweet_main">
+              <%= image_tag(review.image) %>
+            </div>
         </div>
-        <div class="left_contents-tweet_main">
-          <%= image_tag(@reviews.image) %>
+        <div class="left_contents_text">
+          <h1><%= review.content %></h1>
         </div>
-    </div>
-    <div class="left_contents_text">
-       <h1><%= @reviews.content %></h1>
-    </div>
-  </li>
-  <li>
-    <div class="left_contents-tweet">
-        <div class="left_contents-tweet_title">
-            <h1>我が猫</h1>
-        </div>
-        <div class="left_contents-tweet_main">
-        </div>
-    </div>
-    <div class="left_contents_text">
-    </div>
-    </li>
-    <li>
-    <div class="left_contents-tweet">
-        <div class="left_contents-tweet_title">
-            <h1>我が猫</h1>
-        </div>
-        <div class="left_contents-tweet_main">
-        </div>
-    </div>
-    <div class="left_contents_text">
-    </div>
-    </li>
-    <li>
-    <div class="left_contents-tweet">
-        <div class="left_contents-tweet_title">
-            <h1>我が猫</h1>
-        </div>
-        <div class="left_contents-tweet_main">
-        </div>
-    </div>
-    <div class="left_contents_text">
-    </div>
-    </li>
- </ul>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
 

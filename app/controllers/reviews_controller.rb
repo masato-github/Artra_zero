@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = Review.find(1)
+    @reviews = Review.all
   end
 
   def new
