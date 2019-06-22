@@ -31,7 +31,7 @@ body{
       padding-right: 100px;
 
         &_search{
-          margin-right: 30px;
+          margin: 0 30px;
           padding: 0.5em 1em;
           color: #5d627b;
           background: white;
@@ -41,6 +41,21 @@ body{
 
         &_new{
           padding: 0.5em 1em;
+          color: #5d627b;
+          background: white;
+          border-top: solid 5px #5d627b;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        }
+
+        &_sign_out{
+          padding: 0.5em 0.5em;
+          color: #5d627b;
+          background: white;
+          border-top: solid 5px #5d627b;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        }
+        &_sign_in{
+          padding: 0.5em 0.5em;
           color: #5d627b;
           background: white;
           border-top: solid 5px #5d627b;
