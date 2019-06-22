@@ -1,0 +1,32 @@
+.show_content{
+  height:200px;
+  width:calc(100vw - 35vw);
+  background-color: white;
+  &_title{
+    width:50%;
+    padding: 0.5em 1em;
+    font-weight: bold;
+    color: #000;/*文字色*/
+    background: #FFF;
+    border: solid 3px #5d627b;/*線*/
+    border-radius: 10px;/*角の丸み*/
+  }
+  &_main{
+    margin-top:10px;
+      img{
+        width: 90%;    /* 横幅を割合で指定 */
+        height: auto;  /* 高さは自動指定 */
+      }
+  }
+}
+.show_content_text{
+  vertical-align: middle;
+  padding:15px 15px;
+  height:200px;
+  width: 30%;
+  word-wrap: break-word;
+  color: #000;/*文字色*/
+  background: #FFF;
+  border: solid 3px #5d627b;/*線*/
+  border-radius: 40px;/*角の丸み*/
+}
