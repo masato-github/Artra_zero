@@ -1,4 +1,7 @@
 <%# 投稿一覧(左側のコンテンツ) %>
+<%# いいね機能 %>
+<%= render partial: 'reviews/reviews', collection: @reviews, as: :review %>
+
 <div class="left_contents">
   <ul>
     <% @reviews.each do |review| %>

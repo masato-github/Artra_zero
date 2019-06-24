@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  # いいね機能
+  post   '/like/:review_id' => 'likes#like',   as: 'like'
+  delete '/like/:review_id' => 'likes#unlike', as: 'unlike'
+
   root    'reviews#index'
   resources :reviews
 
