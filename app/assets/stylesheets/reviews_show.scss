@@ -1,0 +1,58 @@
+.show_main{
+  height: auto;
+  width: 80vw;
+  background-color: rgb(136, 136, 136);
+  margin:100px auto;
+  padding: 50px;
+
+
+    &_content{
+      height:auto;
+      width:70vw;
+      margin: 0 auto;
+      padding:10px;
+      background-color: white;
+        &_title{
+          margin:0 auto;
+          width:50%;
+          // 枠のCSS
+          padding: 0.5em 1em;
+          font-weight: bold;
+          color: #000;/*文字色*/
+          background: #FFF;
+          border: solid 3px #5d627b;/*線*/
+          border-radius: 10px;/*角の丸み*/
+        }
+        &_main{
+          margin:20px 0;
+          text-align: center;
+            img{
+              width: 90%;    /* 横幅を割合で指定 */
+              height: auto;  /* 高さは自動指定 */
+            }
+        }
+    }
+    &_content_text{
+      text-align: center;
+      margin: 30px auto;
+      padding:15px 15px;
+      height:200px;
+      width: 60vw;
+      word-wrap: break-word;
+      color: #000;/*文字色*/
+      background: #FFF;
+      border: solid 3px #5d627b;/*線*/
+      border-radius: 40px;/*角の丸み*/
+    }
+
+    &_text-box{
+      
+    }
+
+    &_chat{
+      height:800px;
+      width:90%;
+      margin:0 auto;
+      background-color: #FFF;
+    }
+  } 
