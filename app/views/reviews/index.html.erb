@@ -1,15 +1,14 @@
 <%# 投稿一覧(左側のコンテンツ) %>
 <%# いいね機能 %>
-<%= render partial: 'reviews/reviews', collection: @reviews, as: :review %>
-
 <div class="left_contents">
   <ul>
     <% @reviews.each do |review| %>
       <li>
         <div class="left_contents-tweet">
             <div class="left_contents-tweet_title">
-                <h1><%= review.title %></h1>
+                <span><%= review.title %></span>
             </div>
+            <%= render partial: 'reviews/reviews', :locals => { review: review } %>
             <div class="left_contents-tweet_main">
               <%= image_tag(review.image) %>
             </div>
