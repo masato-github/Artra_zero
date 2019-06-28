@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :nickname, presence: {message: 'を入力してください'}
 
 # userはreviewを持っている
-  has_many :reviews, dependent: :destroy
+  has_many :reviews
 
   # いいね機能
   has_many :likes, dependent: :destroy
