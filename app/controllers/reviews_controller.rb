@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :login_check, except: :index
   def index
     @reviews = Review.order("id DESC")
+    @reviews_rank = Review.order("likes_count ASC")
   end
 
   def show

@@ -83,12 +83,10 @@
         height:100%;
         width:100%;
         background-color: white;
-
-          &_title{
-            font-size:20px;
-            text-align: right;
-            padding: 150px 20px 5px 0;
-          }
+        img{
+         height:100%;
+         width:100%;
+        }
       }
     }
 }

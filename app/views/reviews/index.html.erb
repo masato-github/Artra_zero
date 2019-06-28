@@ -20,53 +20,33 @@
         <div class="left_contents_text">
           <h1><%= review.content %></h1>
         </div>
+        <%# 投稿したユーザーのニックネイムを表示 %>
+        <span><%= review.user.nickname %></span>
       </li>
     <% end %>
   </ul>
 </div>
 
+
+
 <%# オススメ画面(右側のコンテンツ) %>
 <div class="right_contents">
+
   <div class="right_contents-recommended_title">
     <h1 class="right_contents-recommended_title_font">オススメ</h1>
   </div>
-<ul>
-  <li>
-    <div class="right_contents-recommended_main">
-        <div class="right_contents-recommended_main_image">
-          <div class="right_contents-recommended_main_image_title">
-            <h1 class="right_contents-recommended_main_image_title_font">吾輩は猫である</h1>
-          </div>
+
+  <ul>
+    <% @reviews_rank.each do |review| %>
+      <li>
+        <div class="right_contents-recommended_main">
+            <div class="right_contents-recommended_main_image">
+            <%= image_tag(review.image) %>
+            <%= review.title %>
+            </div>
         </div>
-    </div>
-  </li>
-  <li>
-    <div class="right_contents-recommended_main">
-        <div class="right_contents-recommended_main_image">
-          <div class="right_contents-recommended_main_image_title">
-            <h1 class="right_contents-recommended_main_image_title_font">吾輩は猫である</h1>
-          </div>
-        </div>
-    </div>
-  </li>
-  <li>
-    <div class="right_contents-recommended_main">
-        <div class="right_contents-recommended_main_image">
-          <div class="right_contents-recommended_main_image_title">
-            <h1 class="right_contents-recommended_main_image_title_font">吾輩は猫である</h1>
-          </div>
-        </div>
-    </div>
-  </li>
-  <li>
-    <div class="right_contents-recommended_main">
-        <div class="right_contents-recommended_main_image">
-          <div class="right_contents-recommended_main_image_title">
-            <h1 class="right_contents-recommended_main_image_title_font">吾輩は猫である</h1>
-          </div>
-        </div>
-    </div>
-  </li>
- </ul>
+      </li>
+    <% end %>
+  </ul>
 
 </div>
