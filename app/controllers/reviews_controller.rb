@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :login_check, except: :index
+  before_action :login_check
   def index
     @reviews = Review.order("id DESC")
     @reviews_rank = Review.order("likes_count ASC")
@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
 
 
   def login_check
-    redirect_to action: :index unless user_signed_in?
+    redirect_to  "/users/sign_in" unless user_signed_in?
   end
 
 
