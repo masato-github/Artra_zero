@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  has_one_attached :image
+  has_one_attached :images
 
   # userに所属
   belongs_to :user
