@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   delete '/like/:review_id' => 'likes#unlike', as: 'unlike'
 
   root    'reviews#index'
+
+
   resources :reviews
+  resources :arts
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'

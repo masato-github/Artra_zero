@@ -3,6 +3,7 @@ class Review < ApplicationRecord
 
   # userに所属
   belongs_to :user
+  belongs_to :art
 
 
   # いいね機能
