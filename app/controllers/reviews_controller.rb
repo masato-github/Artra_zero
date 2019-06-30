@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.create(title: review_params[:title], content: review_params[:content], images: review_params[:images], user_id: current_user.id)
+    @review = Review.create(title: review_params[:title], content: review_params[:content], image: review_params[:image], user_id: current_user.id)
     redirect_to action: 'index'
   end
 
@@ -28,6 +28,6 @@ class ReviewsController < ApplicationController
   def review_params
     #requireメソッドがデータのオブジェクト名(review)を定め、
     #permitメソッドで変更を加えられる（保存の処理ができる）キーを指定します。
-    params.require(:review).permit(:title, :content, images: [] ) # POINT
+    params.require(:review).permit(:title, :content, :image ) # POINT
   end
 end
