@@ -1,0 +1,33 @@
+<div class="arts_content">
+  <div class="arts_content_title">
+  </div>
+  <div class="arts_content_image">
+  </div>
+  <div class="arts_content_description">
+  </div>
+</div>
+
+<ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <div class="left_contents-tweet">
+            <%# タイトル表示 %>
+            <div class="left_contents-tweet_title">
+            <a href="/arts/<%= review.art_id %>">
+                <span><%= review.title %></span>
+            </a>
+            </div>
+            <%# いいねのテンプレートを呼び出し(作品のidを使いたいのでreviewを受け渡します) %>
+            <%= render partial: 'reviews/reviews', :locals => { review: review } %>
+            <div class="left_contents-tweet_main">
+              <%= image_tag(review.image) %>
+            </div>
+        </div>
+        <div class="left_contents_text">
+          <h1><%= review.content %></h1>
+        </div>
+        <%# 投稿したユーザーのニックネイムを表示 %>
+        <span><%= review.user.nickname %></span>
+      </li>
+    <% end %>
+  </ul>
