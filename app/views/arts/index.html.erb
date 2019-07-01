@@ -1,0 +1,15 @@
+<p>検索</p>
+<%= form_tag(arts_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+
+<ul>
+<% @arts.each do |art| %>
+<a href="arts/<%= art.id %>">
+  <li>
+  <%= art.title %>
+  </li>
+</a>
+  <% end %>
+</ul>

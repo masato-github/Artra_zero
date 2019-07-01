@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  # いいね機能関係のルーティング
   # いいね機能 as: で prefix名　を指定できます
   post   '/like/:review_id' => 'likes#like',   as: 'like'
   delete '/like/:review_id' => 'likes#unlike', as: 'unlike'
 
+  # path無しの時のトップページへリダイレクト
   root    'reviews#index'
 
 
-  resources :reviews
-  resources :arts
-
+  # メインのルーティング
+  resources :arts do
+    resources :reviews
+  end
+# ログアウト？
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
