@@ -5,7 +5,7 @@ class ArtsController < ApplicationController
   def index
     @arts = Art.search(params[:search])
   end
-  
+
 
   # 作品詳細画面
   def show

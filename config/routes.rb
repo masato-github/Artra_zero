@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   # path無しの時のトップページへリダイレクト
   root    'reviews#index'
 
-
   # メインのルーティング
-  resources :arts do
-    resources :reviews
+  resources :arts, only:[:index, :show] do
+    resources :reviews, only:[:index, :show, :new, :create]
   end
+
 # ログアウト？
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
