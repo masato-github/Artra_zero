@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
 
   # レビューの保存ロジック
   def create
-    @review = Review.create(title: review_params[:title], content: review_params[:content], image: review_params[:image], user_id: current_user.id)
+    @review = Review.create(title: review_params[:title], content: review_params[:content], image: review_params[:image], art_id: review_params[:art_id], user_id: current_user.id)
     redirect_to action: 'index'
   end
 

@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 
 
   # メインのルーティング
-  resources :reviews
-  resources :arts
-
+  resources :arts do
+    resources :reviews
+  end
 # ログアウト？
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
