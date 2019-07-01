@@ -6,8 +6,10 @@
 
 <ul>
 <% @arts.each do |art| %>
+<a href="arts/<%= art.id %>">
   <li>
-    <%= art.title %>
+  <%= art.title %>
   </li>
+</a>
   <% end %>
 </ul>
