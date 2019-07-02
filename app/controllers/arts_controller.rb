@@ -1,5 +1,5 @@
 class ArtsController < ApplicationController
-
+before_action :login_check
 
   # 検索画面
   def index
@@ -10,6 +10,11 @@ class ArtsController < ApplicationController
   # 作品詳細画面
   def show
     @art = Art.find(params[:id])
+  end
+
+
+  def login_check
+    redirect_to  "/users/sign_in" unless user_signed_in?
   end
 
 end
