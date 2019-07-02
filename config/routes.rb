@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   # メインのルーティング
   resources :arts, only:[:index, :show] do
-    resources :reviews, only:[:index, :show, :new, :create]
+    resources :reviews, only:[:index, :show, :new, :create] do
+      resources :chats, only:[:create]
+    end
   end
 
 # ログアウト？

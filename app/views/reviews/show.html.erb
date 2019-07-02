@@ -9,7 +9,7 @@
       <div class="show_main_content_main">
         <%= image_tag(@review.image) %>
       </div>
-      
+
     </div>
 
     <div class="show_main_content_text">
@@ -19,6 +19,17 @@
     <div class="show_main_text-box"></div>
 
     <div class="show_main_chat">
+      <%= form_tag("/arts/#{@review.art_id}/reviews/#{@review.id}/chats", method: :post) do %>
+        <textarea name="text" placeholder="コメントする" rows="2" cols="30"></textarea>
+        <input type="submit" value="SENT">
+      <% end %>
 
+      <ul>
+      <% @chats.each do |chat| %>
+        <li>
+          <h1><%= chat.text %></h1>
+        </li>
+      <% end %>
+      </ul>
     </div>
 </div>

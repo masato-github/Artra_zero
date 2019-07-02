@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
   # レビュー詳細画面(コメントができる)
   def show
     @review = Review.find(params[:id])
+    @chats = @review.chats
   end
 
   # レビューの投稿画面
