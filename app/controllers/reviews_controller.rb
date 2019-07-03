@@ -9,7 +9,12 @@ class ReviewsController < ApplicationController
 
   # レビュー詳細画面(コメントができる)
   def show
-    @review = Review.find(params[:id])
+    if params[:id] then
+      @review = Review.find(params[:id])
+    elsif params[:review_id] then
+     @review = Review.find(params[:review_id])
+    end
+
     @chats = @review.chats
   end
 

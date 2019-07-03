@@ -2,6 +2,7 @@ class ChatsController < ApplicationController
 
   def create
     @chat = Chat.create(text: chat_params[:text], user_id: current_user.id, review_id: chat_params[:review_id], art_id: chat_params[:art_id])
+    redirect_to redirect_chat_path
   end
 
   private
