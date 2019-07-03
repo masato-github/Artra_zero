@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
 # userはreviewを持っている
   has_many :reviews
+# userはchatを持っている
+  has_many :chats
 
   # いいね機能
   has_many :likes, dependent: :destroy

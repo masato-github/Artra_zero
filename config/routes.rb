@@ -8,10 +8,14 @@ Rails.application.routes.draw do
 
   # path無しの時のトップページへリダイレクト
   root    'reviews#index'
+  # 投稿後のリダイレクトが上手く行かなかったため、個別で定義している
+  get '/arts/:art_id/reviews/:review_id' => 'reviews#show', as: 'redirect_chat'
 
   # メインのルーティング
   resources :arts, only:[:index, :show] do
-    resources :reviews, only:[:index, :show, :new, :create]
+    resources :reviews, only:[:index, :show, :new, :create] do
+      resources :chats, only:[:create]
+    end
   end
 
 # ログアウト？

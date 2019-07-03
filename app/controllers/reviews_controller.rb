@@ -9,7 +9,14 @@ class ReviewsController < ApplicationController
 
   # レビュー詳細画面(コメントができる)
   def show
-    @review = Review.find(params[:id])
+    # チャットのフォームから送信した場合、パラメーターのkeyが通常の(id)から(review_id)となるため、if文を仕様している
+    if params[:id] then
+      @review = Review.find(params[:id])
+    elsif params[:review_id] then
+     @review = Review.find(params[:review_id])
+    end
+    # チャットへ投稿内容を表示するため、chatsのインスタンス変数を定義している
+    @chats = @review.chats
   end
 
   # レビューの投稿画面
