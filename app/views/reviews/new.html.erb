@@ -1,6 +1,6 @@
 <div class="reviews_new">
   <div class="reviews_new_content">
-    <%= form_with model: @review, local: true  do |form| %>
+    <%= form_with model: [@art, @review],url: art_reviews_path, local: true  do |form| %>
 
     <div class="reviews_new_content_title">
       <h1>作品のタイトルを入力してください</h1>
@@ -13,7 +13,8 @@
     </div>
 
     <div class="reviews_new_content_image">
-      <%= form.file_field :image %><br>
+      <%= form.label :image %>
+      <%= form.file_field :image %>
     </div>
 
     <div class="reviews_new_content_submit">
