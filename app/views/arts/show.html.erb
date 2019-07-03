@@ -1,0 +1,12 @@
+
+<h1><%= @art.title %></h1>
+
+
+<% @art.reviews.each do |review| %>
+
+<h1><%= review.title %></h1>
+
+<% end %>
+
+
+<a href="/arts/<%= @art.id %>/reviews/new">投稿</a><!--投稿ボタン-->
