@@ -18,6 +18,7 @@
         <div class="header_contents_button">
           <% if user_signed_in? %>
           <%= link_to  "ログアウト", destroy_user_session_path, {class:"header_contents_button_sign_out"} %>   <!--ログアウト-->
+          <%= link_to  "作品追加", new_art_path, {class: "header_contents_button_new"}  %>   <!--検索ボタン-->
           <% else %>
           <%= link_to  "ログイン", user_session_path, {class:"header_contents_button_sign_in"} %>   <!--ログイン-->
           <% end %>

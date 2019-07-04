@@ -7,8 +7,14 @@
         <div class="left_contents-tweet">
             <%# タイトル表示 %>
             <div class="left_contents-tweet_title">
-            <a href="/arts/<%= review.art_id %>">
+            <a href="/arts/<%= review.art.id %>/reviews/<%= review.id %>">
+
                 <span><%= review.title %></span>
+            </a>
+            </div>
+            <div>
+            <a href="/arts/<%= review.art_id %>">
+                <span><%= review.art.title %></span>
             </a>
             </div>
             <%# いいねのテンプレートを呼び出し(作品のidを使いたいのでreviewを受け渡します) %>
