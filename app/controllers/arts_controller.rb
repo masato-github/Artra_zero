@@ -12,6 +12,22 @@ before_action :login_check
     @art = Art.find(params[:id])
   end
 
+  def create
+
+  end
+
+  def new
+
+  end
+
+  def update
+
+  end
+
+  def edit
+
+  end
+
 
   def login_check
     redirect_to  "/users/sign_in" unless user_signed_in?

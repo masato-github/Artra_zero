@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/arts/:art_id/reviews/:review_id' => 'reviews#show', as: 'redirect_chat'
 
   # メインのルーティング
-  resources :arts, only:[:index, :show] do
+  resources :arts, only:[:index, :show, :create, :new, :edit, :update] do
     resources :reviews, only:[:index, :show, :new, :create] do
       resources :chats, only:[:create]
     end
