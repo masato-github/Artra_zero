@@ -3,9 +3,17 @@ class Art < ApplicationRecord
   
   has_many :reviews
 
-  validates :title, presence: { message: "(タイトル)" }
-  validates :description, presence: {message: "(説明)"}
-  validates :image, presence: {message: "(画像)"}
+  validates :title, presence: { message: "は必ず入力して下さい" }
+  validates :description, presence: {message: "は必ず入力して下さい"}
+  validate :validate_image
+
+  def validate_image
+    if  !image.attached?
+      image.purge
+      errors[:base] << "画像は必ず選択して下さい"
+    end
+  end
+
 
 
 # 作品検索ロジック

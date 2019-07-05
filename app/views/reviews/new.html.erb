@@ -2,6 +2,24 @@
   <div class="reviews_new_content">
     <%= form_with model: [@art, @review],url: art_reviews_path, local: true  do |form| %>
 
+
+     <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @review.errors.count %> 箇所のエラーがあります。下記を確認して下さい:</h2>
+  
+      <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br>
+  <br>
+
+  
+
     <div class="reviews_new_content_title">
       <h1>作品のタイトルを入力してください</h1>
       <%= form.text_field :title, :size => '60'%><br>

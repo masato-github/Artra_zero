@@ -5,11 +5,11 @@
 
   <% if @art.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@art.errors.count, "error") %> :</h2>
+       <h2><%= @art.errors.count %> 箇所のエラーがあります。下記を確認して下さい:</h2>
   
       <ul>
       <% @art.errors.full_messages.each do |msg| %>
-        <li><%= msg %>は入力してください</li>
+        <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
@@ -31,7 +31,7 @@
 
     <div >
       <%= form.label :image %>
-      <%= form.file_field :image %>
+      <%= form.file_field :image, %>
     </div>
 
     <div >

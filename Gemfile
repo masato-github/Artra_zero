@@ -64,3 +64,4 @@ gem 'devise'
 gem "jquery-rails"
 gem 'pry-rails'
 gem 'mini_magick'
+gem 'rails-i18n'
