@@ -3,6 +3,10 @@ class Art < ApplicationRecord
   
   has_many :reviews
 
+  validates :title, presence: { message: "(タイトル)" }
+  validates :description, presence: {message: "(説明)"}
+  validates :image, presence: {message: "(画像)"}
+
 
 # 作品検索ロジック
   def self.search(search) #ここでのself.はArt.を意味する
