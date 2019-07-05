@@ -4,7 +4,6 @@ class Art < ApplicationRecord
   has_many :reviews
 
 
-
 # 作品検索ロジック
   def self.search(search) #ここでのself.はArt.を意味する
     if search
