@@ -6,7 +6,7 @@
   <% if @art.errors.any? %>
     <div id="error_explanation">
        <h2><%= @art.errors.count %> 箇所のエラーがあります。下記を確認して下さい:</h2>
-  
+
       <ul>
       <% @art.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -17,7 +17,6 @@
 
   <br>
   <br>
-  
 
     <div >
       <h1>作品のタイトルを入力してください</h1>

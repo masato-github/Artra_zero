@@ -60,8 +60,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# ユーザーのログインなどの機能
 gem 'devise'
+# いいね機能などの為のjqueryを追加
 gem "jquery-rails"
+# デバック機能の追加
 gem 'pry-rails'
+# ActiveStorageを使用する為のパッケージ
 gem 'mini_magick'
+# エラーメッセージを日本語化する為のパッケージ
 gem 'rails-i18n'

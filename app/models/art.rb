@@ -1,11 +1,15 @@
 class Art < ApplicationRecord
+  # Active Storage の画像を保存する記述
   has_one_attached :image
-  
+
+  # artとreviewのアソシエーション
   has_many :reviews
 
+  # バリデーション　「タイトル」「説明」「画像」存在の有無のみ
   validates :title, presence: { message: "は必ず入力して下さい" }
   validates :description, presence: {message: "は必ず入力して下さい"}
   validate :validate_image
+
 
   def validate_image
     if  !image.attached?
