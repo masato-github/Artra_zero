@@ -70,3 +70,6 @@ gem 'pry-rails'
 gem 'mini_magick'
 # エラーメッセージを日本語化する為のパッケージ
 gem 'rails-i18n'
+# React導入
+gem 'react-rails'
+gem 'webpacker'
