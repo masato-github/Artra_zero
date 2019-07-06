@@ -26,8 +26,16 @@ class ReviewsController < ApplicationController
 
   # レビューの保存ロジック
   def create
-    @review = Review.create(title: review_params[:title], content: review_params[:content], image: review_params[:image], art_id: params[:art_id], user_id: current_user.id)
-    redirect_to action: 'index'
+    @review = Review.new(title: review_params[:title], content: review_params[:content], image: review_params[:image], art_id: params[:art_id], user_id: current_user.id)
+    @review.save
+
+    if @review.save
+      # artsコントローラーのshowアクションに飛ぶがidが渡せないので付与
+      redirect_to action: 'index'
+   else
+     render :new
+   end
+
   end
 
 # ログインしていないとログイン画面しか行けない設定

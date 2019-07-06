@@ -1,9 +1,30 @@
 <div class="reviews_new">
   <div class="reviews_new_content">
+
+    <%# レビューの投稿フォームを作成 %>
     <%= form_with model: [@art, @review],url: art_reviews_path, local: true  do |form| %>
 
+
+    <%# バリデーションにかかり、エラーがあればエラーメッセージを表示 %>
+     <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @review.errors.count %> 箇所のエラーがあります。下記を確認して下さい:</h2>
+      <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%# 改行 %>
+  <br>
+  <br>
+
+
+
     <div class="reviews_new_content_title">
-      <h1>作品のタイトルを入力してください</h1>
+      <h1>レビューのタイトルを入力してください</h1>
       <%= form.text_field :title, :size => '60'%><br>
     </div>
 
