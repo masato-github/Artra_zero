@@ -1,12 +1,30 @@
 
 <h1><%= @art.title %></h1>
-
+<%= image_tag(@art.image) %>
+<h1><%= @art.description %></h1>
 
 <% @art.reviews.each do |review| %>
 
 <h1><%= review.title %></h1>
 
+
 <% end %>
 
 
-<a href="/arts/<%= @art.id %>/reviews/new">投稿</a><!--投稿ボタン-->
+<a href="/arts/<%= @art.id %>/edit">編集</a><!--投稿ボタン-->
+
+<a href="/arts/<%= @art.id %>/reviews/new">この作品のレビューを投稿する</a><!--投稿ボタン-->
+
+
+  <ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <div class="right_contents-recommended_main">
+            <div class="right_contents-recommended_main_image">
+            <%= image_tag(review.image) %>
+            <%= review.title %>
+            </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>

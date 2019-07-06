@@ -1,0 +1,40 @@
+
+
+
+    <%= form_with model: @art , local: true  do |form| %>
+
+  <% if @art.errors.any? %>
+    <div id="error_explanation">
+       <h2><%= @art.errors.count %> 箇所のエラーがあります。下記を確認して下さい:</h2>
+
+      <ul>
+      <% @art.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br>
+  <br>
+
+    <div >
+      <h1>作品のタイトルを入力してください</h1>
+      <%= form.text_field :title, :size => '60'%><br>
+    </div>
+
+    <div >
+      <h1>作品の紹介文を入力してください</h1>
+      <%= form.text_area :description %><br>
+    </div>
+
+    <div >
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+
+    <div >
+      <%= form.submit %>
+    </div>
+
+    <% end %>

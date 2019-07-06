@@ -1,0 +1,23 @@
+
+    <%= form_with model: @art , local: true  do |form| %>
+
+    <div >
+      <h1>作品のタイトルを入力してください</h1>
+      <%= form.text_field :title, :value=>@art.title , :size => '60'%><br>
+    </div>
+
+    <div >
+      <h1>作品の紹介文を入力してください</h1>
+      <%= form.text_area :description, :value => @art.description %><br>
+    </div>
+
+    <div >
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+    </div>
+
+    <div >
+      <%= form.submit %>
+    </div>
+
+    <% end %>
