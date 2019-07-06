@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
     redirect_to action: 'index'
   end
 
-# ログインしていないとログイン画面しか行けない設定
+  # ログインしていないとログイン画面しか行けない設定
   def login_check
     redirect_to  "/users/sign_in" unless user_signed_in?
   end
