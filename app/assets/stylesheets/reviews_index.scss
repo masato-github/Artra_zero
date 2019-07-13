@@ -1,60 +1,81 @@
-.left_contents{
-  height: auto;
-  width: calc(60vw - 30px);
-  float:left;
-  padding-top:30px;
-  padding-left:20px;
-  padding-right:10px;
-  padding-bottom: 20px;
-  background-color: #dedede;
-  display: table;
-    li{
-      list-style: none;
-      margin-bottom: 30px;
-    }
 
-    &-tweet{
-      display: table-cell;
-      height:200px;
-      width:calc(100vw - 35vw);
-      background-color: white;
-      &_title{
-        width:50%;
-        padding: 0.5em 1em;
-        font-weight: bold;
-        color: #000;/*文字色*/
-        background: #FFF;
-        border: solid 3px #5d627b;/*線*/
-        border-radius: 10px;/*角の丸み*/
+.left_contents{
+  margin-top: 100px;
+  height: 100%;
+  width: 70vw;
+  float:left;
+  background-color: #bbb;
+      li{
+        list-style: none;
       }
-      &_main{
-        margin-top:10px;
-          img{
-            width: 90%;    /* 横幅を割合で指定 */
-            height: auto;  /* 高さは自動指定 */
-          }
-      }
+
+    &_tweet{
+      background-color: #bbb;
+      height: 100%;
+      width: 100%;
+
+        &_left{
+          float: left;
+          width: 20vw;
+          height: 20vw;
+          margin: 10px;
+          padding: 1vw;
+          border-radius: 20px;
+          background-color: white;
+          text-align: center;
+              &_title{
+              }
+              &_text{
+                margin-top: 3vw;
+              }
+        }
+
+        &_center{
+          float: left;
+          width: 22vw;
+          height: 22vw;
+          margin: 10px 0;
+          border-radius: 20px;
+          background-color: white;
+              &_image{
+                width: 22vw;
+                height: 22vw;
+                border-radius: 20px;
+              }
+        }
+
+        &_right{
+          float: left;
+          width: 22vw;
+          height: 21vw;
+          margin: 10px;
+          padding-top: 1vw;
+          border-radius: 20px;
+          text-align: center;
+          background-color: white;
+                &_image{
+                width: 14vw;
+                height: 14vw;
+                }
+                &_title{
+                  margin-top:2vw;
+                }
+        }
     }
-    &_text{
-      display: table-cell;
-      vertical-align: middle;
-      padding:15px 15px;
-      height:200px;
-      width: 30%;
-      word-wrap: break-word;
-      color: #000;/*文字色*/
-      background: #FFF;
-      border: solid 3px #5d627b;/*線*/
-      border-radius: 40px;/*角の丸み*/
-    }
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 
 .right_contents{
+  margin-top: 100px;
   height: auto;
-  width: calc(40% - 20px);
+  width: 30vw;
   float: right;
-  padding:30px 10px 30px 10px;
   background-color: #bbb;
 
 
@@ -73,19 +94,18 @@
         }
     }
     &-recommended_main{
-      height:180px;
+      height:100%;
       width: 100%;
-      margin-top:20px;
-      border: solid 2px #9496a0;/*線*/
-      border-radius: 10px;/*角の丸み*/
+      margin-top: 30px;
+      text-align: center;
+
 
       &_image{
         height:100%;
         width:100%;
-        background-color: white;
         img{
-         height:100%;
-         width:100%;
+         height: 15vw;
+         width: 20vw;
         }
       }
     }

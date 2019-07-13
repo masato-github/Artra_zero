@@ -7,26 +7,55 @@ body{
     }
 }
 
+.top{
+  position: relative;/*相対配置*/
+  height: 100%;
+  width: 100vw;
+}
+
+.top_img{
+  height: 100vh;
+  width: 100vw;
+}
+
+.top_comment{
+  position: absolute;
+  color: white;/*文字は白に*/
+  font-weight: bold; /*太字に*/
+  font-size: 50px;/*サイズ2倍*/
+  top:25%;
+  left: calc(50% - 225px) ;
+  opacity: 0.7;
+}
+
 
 .header_contents{
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100px;
-  width: auto;
-  background-color: #c0bfbf;
-
+  width: 100vw;
+  background-color: #FFE0CE;
+  opacity: 0.6;
+  font-family: 'Tahoma';
+      &:hover{
+      opacity: 1.0;
+      }
     a{
       text-decoration: none;
     }
 
     &_logo{
       float: left;
-      font-size: 45px;
-      padding: 0.5em 1em;
+      font-size: 50px;
+      padding: 0.4em 2em;
       margin: 2px 0 0 10px;
-      color: #5d627b;
-      background: white;
-      border-top: solid 5px #5d627b;
-      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-
+      color: #C97C00;
+      opacity: none;
+      text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #e6d194, 0px 2px 0px #e6d194, 0px 3px 0px #e6d194;
+      &:hover{
+        color: #FF7C00;
+      }
     }
 
     &_button{
@@ -37,34 +66,34 @@ body{
 
         &_search{
           margin: 0 30px;
-          padding: 0.5em 1em;
-          color: #5d627b;
-          background: white;
-          border-top: solid 5px #5d627b;
-          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          padding: 0.5em 0.5em;
+          color: #C97C00;
+                &:hover{
+                  color: #FF7C00;
+                }
         }
 
         &_new{
-          padding: 0.5em 1em;
-          color: #5d627b;
-          background: white;
-          border-top: solid 5px #5d627b;
-          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          padding: 0.5em 0;
+          color: #C97C00;
+                &:hover{
+                  color: #FF7C00;
+                }
         }
 
         &_sign_out{
-          padding: 0.5em 0.5em;
-          color: #5d627b;
-          background: white;
-          border-top: solid 5px #5d627b;
-          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          padding: 0.5em 1.5em;
+          color: #C97C00;
+                &:hover{
+                  color: #FF7C00;
+                }
         }
         &_sign_in{
-          padding: 0.5em 0.5em;
-          color: #5d627b;
-          background: white;
-          border-top: solid 5px #5d627b;
-          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          padding: 0.5em 1.5em;
+          color: #C97C00;
+                &:hover{
+                  color: #FF7C00;
+                }
         }
     }
 }

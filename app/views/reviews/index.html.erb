@@ -1,68 +1,66 @@
+
 <%# 投稿一覧(左側のコンテンツ) %>
-<div class="left_contents">
-  <ul>
-    <% @reviews.each do |review| %>
-      <li>
-        <div class="left_contents-tweet">
-            <%# タイトル表示 %>
-            <div class="left_contents-tweet_title">
-            <%# ログを表示させる(ホーム画面に繊維するaタグを付与) %>
-            <a href="/arts/<%= review.art.id %>/reviews/<%= review.id %>">
-                <span><%= review.title %></span>
-            </a>
+  <div class="left_contents">
+    <ul>
+      <% @reviews.each do |review| %>
+        <li>
+          <div class="left_contents_tweet clearfix">
+              <%# レビューの左ブロック %>
+              <div class="left_contents_tweet_left">
+              <%# ログを表示させる(ホーム画面に繊維するaタグを付与) %>
+                <a href="/arts/<%= review.art.id %>/reviews/<%= review.id %>" class="left_contents_tweet_left_title">
+                    <span><%= review.title %></span>
+                </a>
+                <%= render partial: 'reviews/reviews', :locals => { review: review } %>
+                <span><%= review.user.nickname %></span>
+                <div class="left_contents_tweet_left_text">
+                  <h1><%= review.content %></h1>
+                </div>
+              </div>
+
+              <div class="left_contents_tweet_center">
+                <%= image_tag(review.image, :class=>'left_contents_tweet_center_image') %>
+              </div>
+
+              <div class="left_contents_tweet_right">
+                <%= image_tag(review.art.image, :class=>'left_contents_tweet_right_image') %>
+                <div class="left_contents_tweet_right_title">
+                  <a href="/arts/<%= review.art_id %>">
+                      <p>作品タイトル</p>
+                      <br>
+                      <span><%= review.art.title %></span>
+                  </a>
+                </div>
+              </div>
             </div>
-
-            <%# 作品名を表示(作品詳細ページへ画面遷移) %>
-            <div>
-            <a href="/arts/<%= review.art_id %>">
-                <span><%= review.art.title %></span>
-            </a>
-            </div>
-
-            <%# いいねのテンプレートを呼び出し(作品のidを使いたいのでreviewを受け渡します) %>
-            <%= render partial: 'reviews/reviews', :locals => { review: review } %>
-
-            <%# レビューの画像を表示する %>
-            <div class="left_contents-tweet_main">
-              <%= image_tag(review.image) %>
-            </div>
-
-        <%# class="left_contents-tweet"の閉じタグ %>
-        </div>
-
-        <%# レビューのレビュー内容(テキスト)を表示 %>
-        <div class="left_contents_text">
-          <h1><%= review.content %></h1>
-        </div>
-
-        <%# 投稿したユーザーのニックネイムを表示 %>
-        <span><%= review.user.nickname %></span>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
-
-
-<%# オススメ画面(右側のコンテンツ) %>
-<div class="right_contents">
-
-  <div class="right_contents-recommended_title">
-    <h1 class="right_contents-recommended_title_font">オススメ</h1>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
-  <ul>
-    <%# いいね順で取得した@reviews_rankを使用 %>
-    <% @reviews_rank.each do |review| %>
-      <li>
-        <div class="right_contents-recommended_main">
-            <div class="right_contents-recommended_main_image">
-            <%= image_tag(review.image) %>
-            <%= review.title %>
-            </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
 
-</div>
+
+  <%# オススメ画面(右側のコンテンツ) %>
+  <div class="right_contents">
+
+    <div class="right_contents-recommended_title">
+      <h1 class="right_contents-recommended_title_font">オススメ</h1>
+    </div>
+
+    <ul>
+      <%# いいね順で取得した@reviews_rankを使用 %>
+      <% @reviews_rank.each do |review| %>
+        <li>
+          <div class="right_contents-recommended_main">
+              <div class="right_contents-recommended_main_image">
+              <a href="/arts/<%= review.art.id %>/reviews/<%= review.id %>">
+                <p><%= review.title %></p>
+              </a>
+              <%= render partial: 'reviews/reviews', :locals => { review: review } %>
+              <%= image_tag(review.image) %>
+              </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
