@@ -10,6 +10,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <div class="header_contents">     <!--[固定のヘッダー]-->
+        <div>
+        <%= link_to  "Artra", "/", {class:"header_contents_logo"} %>   <!--ロゴ-->
+        </div>
+        <div class="header_contents_button">
+          <% if user_signed_in? %>
+          <%= link_to  "ログアウト", destroy_user_session_path, {class:"header_contents_button_sign_out"} %>   <!--ログアウト-->
+          <%= link_to  "作品追加", new_art_path, {class: "header_contents_button_new"}  %>   <!--検索ボタン-->
+          <% else %>
+          <%= link_to  "ログイン", user_session_path, {class:"header_contents_button_sign_in"} %>   <!--ログイン-->
+          <% end %>
+          <%= link_to  "検索", arts_path, {class: "header_contents_button_search"}  %>   <!--検索ボタン-->
+        </div>
+      </div>
+    </header>
+    <div class="main">
+        <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,0 +1,64 @@
+.reviews_new{
+  margin: 50px auto;
+  height:auto;
+  width:70%;
+  background-color: white;
+  padding:100px 0;
+
+      &_content{
+        text-align: center;
+          &_title{
+            font-size: 30px;
+            margin: 50px 0;
+                input[type="text"] {
+                    margin: 50px 0;
+                    width: 300px;
+                    height: 40px;
+                    font-size: 30px;
+                    border        : 2px solid black;    /* 枠の指定 */
+                }
+        }
+        &_content{
+          font-size: 30px;
+            textarea {
+              width: 500px;
+              height: 7em;
+              line-height: 1.5em;
+              font-size: 20px;
+              margin: 50px 0;
+              border        : 2px solid black;    /* 枠の指定 */
+            }
+        }
+        &_image{
+          margin: 30px 0;
+          height:100px;
+          input[type="file"] {
+            font-size: 20px;
+            margin-bottom:50px;
+            border        : 2px solid black;    /* 枠の指定 */
+          }
+
+        }
+        &_submit{
+          input {
+            display       : inline-block;
+            border-radius : 5%;          /* 角丸       */
+            font-size     : 18pt;        /* 文字サイズ */
+            text-align    : center;      /* 文字位置   */
+            cursor        : pointer;     /* カーソル   */
+            padding       : 13px 12px;   /* 余白       */
+            background    : #fff;     /* 背景色     */
+            color         : black;     /* 文字色     */
+            line-height   : 1em;         /* 1行の高さ  */
+            transition    : .3s;         /* なめらか変化 */
+            box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+            border        : 2px solid black;    /* 枠の指定 */
+          }
+          input:hover {
+            box-shadow    : none;        /* カーソル時の影消去 */
+            color         : white;     /* 背景色     */
+            background    : black;     /* 文字色     */
+          }
+        }
+      }
+}
