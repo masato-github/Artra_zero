@@ -47,7 +47,6 @@ class ReviewsController < ApplicationController
   # レビュー投稿のストロングパラメータ＾
   private
   def review_params
-    #requireメソッドがデータのオブジェクト名(review)を定め、
     #permitメソッドで変更を加えられる（保存の処理ができる）キーを指定します。
     params.require(:review).permit(:title, :content, :image) # POINT
   end
