@@ -17,5 +17,4 @@ class User < ApplicationRecord
 
   has_many :like_reviews, through: :likes, source: :review
 
-
 end
